@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>💱 Ứng dụng Tiền tệ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>💱 Ứng dụng Chuyển đổi & Phân tích Tiền tệ</h1>
+
+  <section class="card">
+    <h2>1️⃣ Chuyển đổi tiền tệ</h2>
+    <input type="number" id="amount" placeholder="Nhập số tiền" />
+    <select id="from"></select>
+    <select id="to"></select>
+    <button onclick="convert()">Chuyển đổi</button>
+    <p id="convert-result"></p>
+  </section>
+
+  <section class="card">
+    <h2>2️⃣ Danh sách tiền tệ</h2>
+    <button onclick="getCurrencies()">Xem danh sách</button>
+    <ul id="currency-list"></ul>
+  </section>
+
+  <section class="card">
+    <h2>3️⃣ Phân tích xu hướng</h2>
+    <select id="trend-base"></select>
+    <select id="trend-target"></select>
+    <button onclick="getTrend()">Xem xu hướng</button>
+    <div id="trend-result"></div>
+  </section>
+
+  <section class="card">
+    <h2>4️⃣ Dự đoán tỷ giá</h2>
+    <select id="predict-base"></select>
+    <select id="predict-target"></select>
+    <button onclick="predictRate()">Dự đoán</button>
+    <p id="predict-result"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
