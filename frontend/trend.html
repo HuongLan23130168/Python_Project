@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Xu hướng</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trend.css' %}?v=1">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">💱 FinRate</div>
+    <div class="menu">
+        <a href="{% url 'home' %}">Chuyển đổi tền tệ</a>
+        <a href="{% url 'list' %}">Danh sách tiền tệ</a>
+        <a href="{% url 'trend' %}" class="active">Xu hướng tiền tệ</a>
+        <a href="{% url 'prediction' %}">Dự đoán tỷ giá đoái hoài</a>
+    </div>
+    <div class="toggle-theme" onclick="toggleTheme()">
+        <div class="toggle-circle"></div>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Xu hướng tỷ giá</h2>
+    <p class="description">
+        Phân tích biến động tỷ giá trong <strong>7 ngày gần nhất</strong>
+    </p>
+
+    <div class="trend-controls">
+        <div class="select-wrap custom-select" id="baseSelect"></div>
+        <div class="select-wrap custom-select" id="targetSelect"></div>
+    </div>
+
+    <button onclick="loadTrend()">Xem xu hướng</button>
+
+    <div class="trend-summary">
+        <span id="trendLabel"></span>
+        <span id="trendPercent"></span>
+    </div>
+
+    <canvas id="trendChart" height="120"></canvas>
+</div>
+<div class="feature-section">
+    <div class="feature-box">
+        <div class="feature-icon">👥</div>
+        <h4>Hàng triệu người tin cậy</h4>
+        <p>Gia nhập cùng hàng triệu người và doanh nghiệp đang gửi tiền nhanh chóng và minh bạch.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">🏦</div>
+        <h4>Được quản lý</h4>
+        <p>Được giám sát bởi cơ quan tài chính uy tín để bảo vệ người dùng.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">🎧</div>
+        <h4>Hỗ trợ khách hàng 24/7</h4>
+        <p>Hỗ trợ từ chuyên gia mọi lúc qua email, điện thoại hoặc chat trực tuyến.</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{% static 'js/trend.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+</html>
